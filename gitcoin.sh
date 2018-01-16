@@ -1,8 +1,9 @@
 #!/bin/bash
 
 DIFFICULTY=3
+LEADING="f"
 
-PREFIX=$(head -c $DIFFICULTY < /dev/zero | tr '\0' '0')
+PREFIX=$(head -c $DIFFICULTY < /dev/zero | tr '\0' $LEADING)
 
 CURRENT=$(git rev-parse --verify HEAD)
 if [[ $CURRENT == $PREFIX* ]]; then
