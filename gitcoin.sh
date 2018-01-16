@@ -20,4 +20,4 @@ done
 
 echo "SUCCESS: $CURRENT"
 git count-objects
-git gc --auto
+git gc --prune
