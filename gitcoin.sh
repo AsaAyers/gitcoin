@@ -11,8 +11,10 @@ if [[ $CURRENT == $PREFIX* ]]; then
   exit 1
 fi
 
+START=$(date +%s)
 while [[ $CURRENT != $PREFIX* ]];do
-  echo $CURRENT | tee .gitcoin-nonce
+  END=$(date +%s)
+  echo "$CURRENT     $START     $END     $(($END - $START))" | tee .gitcoin-nonce
   git add .gitcoin-nonce
 
   git commit --amend -C HEAD --no-edit > /dev/null
