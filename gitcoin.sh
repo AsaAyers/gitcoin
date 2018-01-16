@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIFFICULTY=2
+DIFFICULTY=3
 
 PREFIX=$(head -c $DIFFICULTY < /dev/zero | tr '\0' '0')
 
